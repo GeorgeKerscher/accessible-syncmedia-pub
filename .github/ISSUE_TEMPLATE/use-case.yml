@@ -1,0 +1,195 @@
+name: Use Case
+description: Capture user experience needs for accessible synchronized media
+title: "[Use case]: "
+labels:
+  - accessibility
+  - use case
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to describe a user experience need, risk, or failure mode.
+        Prefer concrete scenarios over abstract requirements.
+
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User story
+      description: Describe the use case in one or two sentences.
+      placeholder: "As a reader using a screen reader offline during an evacuation, I need..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user-group
+    attributes:
+      label: Primary user group
+      description: Choose the group most affected by this issue.
+      options:
+        - Readers
+        - Producers
+        - Teachers or caregivers
+        - People requiring urgent information
+        - Other or multiple groups
+    validations:
+      required: true
+
+  - type: input
+    id: user-group-other
+    attributes:
+      label: Other user group or combination
+      description: Fill this in if the dropdown choice is "Other or multiple groups."
+      placeholder: ""
+
+  - type: checkboxes
+    id: content-types
+    attributes:
+      label: Content type
+      description: Select all content types that apply.
+      options:
+        - label: Trade book
+        - label: Textbook or manual
+        - label: Interactive e-learning
+        - label: Emergency services
+        - label: Other
+    validations:
+      required: true
+
+  - type: input
+    id: content-type-other
+    attributes:
+      label: Other content type
+      description: Fill this in if "Other" content applies.
+      placeholder: ""
+
+  - type: checkboxes
+    id: user-situation
+    attributes:
+      label: User situation or access need
+      description: Select all known or likely user situations. Add details below.
+      options:
+        - label: Trauma-related needs
+        - label: Visual impairment
+        - label: Hearing impairment
+        - label: Different languages
+        - label: Neurodivergence
+        - label: Dyslexia
+        - label: Easy-to-read text required
+        - label: Other disability, access need, or situational constraint
+    validations:
+      required: true
+
+  - type: input
+    id: access-need-other
+    attributes:
+      label: Other disability, access need, or situational constraint
+      description: Fill this in if the checkbox list does not include the relevant situation.
+      placeholder: "Example: cognitive fatigue, panic response, low literacy, temporary injury"
+
+  - type: textarea
+    id: situation-details
+    attributes:
+      label: Situation details
+      description: Include what is known about context, urgency, language, cognition, sensory needs, stress level, or safety constraints.
+      placeholder: "Example: The user may be under time pressure, and unable to listen to audio."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: location-connectivity
+    attributes:
+      label: Location and connectivity
+      description: Select all that apply.
+      options:
+        - label: Public setting
+        - label: Private setting
+        - label: Mobile or in transit
+        - label: Online
+        - label: Offline
+        - label: Low bandwidth or unreliable connectivity
+        - label: Public kiosk or shared device
+
+  - type: input
+    id: location-connectivity-other
+    attributes:
+      label: Other location or connectivity detail
+      description: Fill this in if the user's environment is not covered above.
+      placeholder: ""
+
+  - type: checkboxes
+    id: modalities
+    attributes:
+      label: Modalities and interaction
+      description: How might the user perceive and operate the content?
+      options:
+        - label: Listening
+        - label: Reading
+        - label: Watching video
+        - label: Viewing images or diagrams
+        - label: Going back and forth between modalities
+        - label: Keyboard navigation
+        - label: Touch input
+        - label: Voice input or speech control
+        - label: Switch, joystick, or alternative input
+    validations:
+      required: true
+
+  - type: input
+    id: modality-other
+    attributes:
+      label: Other modality or interaction method
+      description: Fill this in if the user's way of perceiving or operating content is not covered above.
+      placeholder: ""
+
+  - type: textarea
+    id: assistive-tech
+    attributes:
+      label: Assistive technologies and interface
+      description: Name any assistive technology in use.
+      placeholder: "Example: Screen reader, zoom text, refreshable braille display, captions, hearing aids"
+
+  - type: textarea
+    id: task
+    attributes:
+      label: What is the user trying to do?
+      description: Be specific about the task, decision, or outcome the user needs to complete.
+      placeholder: "Example: Find the correct evacuation route and confirm what to bring."
+    validations:
+      required: true
+
+  - type: textarea
+    id: success
+    attributes:
+      label: What does success mean?
+      description: Define the observable result that would make this experience work for the user.
+      placeholder: "Example: The user can identify the correct route and understand the instructions in their language."
+    validations:
+      required: true
+
+  - type: textarea
+    id: failure
+    attributes:
+      label: What does failure look like?
+      description: Describe the harm, exclusion, confusion, delay, or wrong outcome if this need is not met.
+      placeholder: "Example: The user misses critical instructions because audio has no transcript or the route map is not screen-reader accessible."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: wcag-alignment
+    attributes:
+      label: WCAG-aligned need
+      description: Select the principles this use case appears to involve.
+      options:
+        - label: "Perceivable: content is available through needed modalities, alternatives, captions, transcripts, descriptions, language, or sensory presentation."
+        - label: "Operable: navigation, controls, timing, input methods, focus, and recovery support the user's context."
+        - label: "Understandable: content is readable, predictable, easy to read, in the correct language, and supports comprehension."
+        - label: "Robust: content works with assistive technologies, semantic structure, metadata, platforms, browsers, or reading systems."
+
+  
+  - type: textarea
+    id: other-comments
+    attributes:
+      label: Other comments
+      description: Any other information.
+      placeholder: ""
