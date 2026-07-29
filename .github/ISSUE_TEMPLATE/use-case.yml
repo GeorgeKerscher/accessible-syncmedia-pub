@@ -28,17 +28,15 @@ body:
       options:
         - Readers
         - Producers
-        - Teachers or caregivers
-        - People requiring urgent information
-        - Other or multiple groups
     validations:
       required: true
 
   - type: input
     id: user-group-other
     attributes:
-      label: Other user group or combination
-      description: Fill this in if the dropdown choice is "Other or multiple groups."
+      label: User details
+      description: Add any specific role, relationship, or context for the user.
+      placeholder: "Example: teacher, caregiver, student, librarian"
 
   - type: checkboxes
     id: content-types
@@ -61,15 +59,15 @@ body:
       description: Fill this in if "Other" content applies.
 
   - type: checkboxes
-    id: user-situation
+    id: user-access-need
     attributes:
-      label: User situation or access need
-      description: Select all known or likely user situations. Add details below.
+      label: User access need
+      description: Select all known or likely user needs. Add details below.
       options:
         - label: Trauma-related needs
         - label: Visual impairment
         - label: Hearing impairment
-        - label: Different languages
+        - label: Language-related
         - label: Neurodivergence
         - label: Dyslexia
         - label: Easy-to-read text required
@@ -80,16 +78,15 @@ body:
   - type: input
     id: access-need-other
     attributes:
-      label: Specify other disability, access need, or situational constraint
-      description: Fill this in if the checkbox list does not include the relevant situation.
-      placeholder: "Example: cognitive fatigue, panic response, low literacy, temporary injury"
+      label: More information about the user's access needs.
+      description: 
 
   - type: textarea
     id: situation-details
     attributes:
       label: Situation details
       description: Include what is known about context, urgency, language, cognition, sensory needs, stress level, or safety constraints.
-      placeholder: "Example: The user may be under time pressure, and unable to listen to audio."
+      placeholder: "Example: The user may be under time pressure, and unable to effectively read text in their second language."
     validations:
       required: true
 
@@ -177,10 +174,10 @@ body:
       label: WCAG-aligned need
       description: Select the principles this use case appears to involve.
       options:
-        - label: "Perceivable: content is available through needed modalities, alternatives, captions, transcripts, descriptions, language, or sensory presentation."
-        - label: "Operable: navigation, controls, timing, input methods, focus, and recovery support the user's context."
-        - label: "Understandable: content is readable, predictable, easy to read, in the correct language, and supports comprehension."
-        - label: "Robust: content works with assistive technologies, semantic structure, metadata, platforms, browsers, or reading systems."
+        - label: "Perceivable: content is available through needed modalities."
+        - label: "Operable: navigation, controls, and timing support the user's context."
+        - label: "Understandable: content is appropriately easy to read and is in the correct language."
+        - label: "Robust: content works with assistive technologies and on the desired platforms."
   - type: textarea
     id: other-comments
     attributes:
