@@ -15,7 +15,7 @@ body:
     id: user-story
     attributes:
       label: User story
-      description: Describe the use case in one or two sentences.
+      description: Describe the use case.
       placeholder: "As a reader using a screen reader offline during an evacuation, I need..."
     validations:
       required: true
@@ -38,17 +38,18 @@ body:
       description: Add any specific role, relationship, or context for the user.
       placeholder: "Example: teacher, caregiver, student, librarian"
 
-  - type: checkboxes
+  - type: dropdown
     id: content-types
     attributes:
       label: Content type
-      description: Select all content types that apply.
+      description: Choose one content type for this specific scenario.
+      multiple: false
       options:
-        - label: Trade book
-        - label: Textbook or manual
-        - label: Interactive e-learning
-        - label: Emergency services
-        - label: Other
+        - Trade book
+        - Textbook or manual
+        - Interactive e-learning
+        - Emergency services
+        - Other
     validations:
       required: true
 
@@ -72,8 +73,6 @@ body:
         - label: Dyslexia
         - label: Easy-to-read text required
         - label: Other disability, access need, or situational constraint
-    validations:
-      required: true
 
   - type: input
     id: access-need-other
@@ -94,7 +93,7 @@ body:
     id: location-connectivity
     attributes:
       label: Location and connectivity
-      description: Select all that apply.
+      description: Select a few conditions for this specific scenario.
       options:
         - label: Public setting
         - label: Private setting
@@ -125,8 +124,6 @@ body:
         - label: Touch input
         - label: Voice input or speech control
         - label: Switch, joystick, or alternative input
-    validations:
-      required: true
 
   - type: input
     id: modality-other
@@ -142,42 +139,14 @@ body:
       placeholder: "Example: Screen reader, zoom text, refreshable braille display, captions, hearing aids"
 
   - type: textarea
-    id: task
+    id: task-success-failure
     attributes:
-      label: What is the user trying to do?
-      description: Be specific about the task, decision, or outcome the user needs to complete.
-      placeholder: "Example: Find the correct evacuation route and confirm what to bring."
+      label: Task, success, and failure
+      description: Describe the task, what success looks like, and what failure looks like if the need is not met.
+      placeholder: "Example: The user needs to find the correct evacuation route and confirm what to bring. Success means they can identify the route and understand the instructions in their language. Failure means they miss critical instructions because audio has no transcript or the route map is not screen-reader accessible."
     validations:
       required: true
 
-  - type: textarea
-    id: success
-    attributes:
-      label: What does success mean?
-      description: Define the observable result that would make this experience work for the user.
-      placeholder: "Example: The user can identify the correct route and understand the instructions in their language."
-    validations:
-      required: true
-
-  - type: textarea
-    id: failure
-    attributes:
-      label: What does failure look like?
-      description: Describe the harm, exclusion, confusion, delay, or wrong outcome if this need is not met.
-      placeholder: "Example: The user misses critical instructions because audio has no transcript or the route map is not screen-reader accessible."
-    validations:
-      required: true
-
-  - type: checkboxes
-    id: wcag-alignment
-    attributes:
-      label: WCAG-aligned need
-      description: Select the principles this use case appears to involve.
-      options:
-        - label: "Perceivable: content is available through needed modalities."
-        - label: "Operable: navigation, controls, and timing support the user's context."
-        - label: "Understandable: content is appropriately easy to read and is in the correct language."
-        - label: "Robust: content works with assistive technologies and on the desired platforms."
   - type: textarea
     id: other-comments
     attributes:
